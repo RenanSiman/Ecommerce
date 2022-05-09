@@ -1,1 +1,1 @@
-# Template de E-commerce utilizando técnicas de desenvolvimento seguro
+# E-commerce model for security development
