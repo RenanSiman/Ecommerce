@@ -1,10 +1,12 @@
 :root {
-  --header-footer-bg-color: #1E2639;
-  --main-font-color: #B9BEBA;
+  --header-footer-bg-color: #7F0F0B;
+  --main-font-color: #FFF7F0;
   --main-hover-color: #B13D4C;
   --main-bg-color: #FFF7F0;
   --border-color: #EBDEDB;
   --stars-color: #D09926;
+  --button-color: #a4a4a4;
+  --border-large: #404040;
 }
 
 #root {
@@ -62,6 +64,47 @@ a:hover {
   color: var(--main-hover-color)
 }
 
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+li {
+  margin-top: 1rem;
+  margin: 1.5rem;
+}
+
+li.powers {
+
+  list-style-type: circle;
+}
+
+button {
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+  border: 0.1rem var(--button-color) solid;
+  font-size: 1.6rem;
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #4b4b4b;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+button.primary {
+  background-color: var(--stars-color);
+}
+
+button.block {
+  width: 100%;
+}
+
+button:hover {
+  border: 0.1rem var(--border-large) solid;
+}
+
 header a {
   color: var(--main-font-color);
   padding: 1.5rem;
@@ -85,14 +128,32 @@ a.brand {
   justify-content: center;
 }
 
+.row.top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  margin: 3% auto auto;
+}
+
+.col-1 {
+  flex: 1fr 1fr 20rem;
+}
+
+.col-2 {
+  flex: 2fr 1 20rem;
+}
+
 /* Imagens */ 
 img {
   border-radius: 1.5rem;
 }
 
 img.medium {
-  max-width: 29rem;
-  width: 100%;
+  max-width: 28rem;
+}
+
+img.large {
+  max-width: 30rem;
 }
 
 .card {
@@ -118,4 +179,21 @@ img.medium {
 .rating {
   color: var(--stars-color);
   margin: 0.2rem;
+}
+
+.rating.span {
+  color: var(--stars-color);
+  margin: 0.2rem;
+}
+
+.success {
+  color: #20a020;
+}
+
+.error {
+  color: #a02020;
+}
+
+p.powers {
+  font-weight: bold;
 }
