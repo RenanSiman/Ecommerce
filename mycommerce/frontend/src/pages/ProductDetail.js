@@ -47,7 +47,7 @@ export default function ProductDetail(props) {
                   {prod.countInStock > 0 ? (
                     <span className="success">{prod.countInStock}</span>
                   ) : (
-                    <span className="error">Indisponível</span>
+                    <span className="danger">Indisponível</span>
                   )}
                 </div>
               </div>

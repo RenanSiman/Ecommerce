@@ -7,6 +7,10 @@
   --stars-color: #D09926;
   --button-color: #a4a4a4;
   --border-large: #404040;
+  --success-color: #20a020;
+  --fail-color: #a02020;
+  --blue-color: #2020a0;
+  --bg-error-color: #f1bbbb;
 }
 
 #root {
@@ -187,13 +191,29 @@ img.large {
 }
 
 .success {
-  color: #20a020;
+  color: var(--success-color);
 }
 
-.error {
-  color: #a02020;
+.danger {
+  color: var(--fail-color);
 }
 
 p.powers {
   font-weight: bold;
+}
+
+.alert {
+  padding: 1rem;
+  border: 0.1rem solid transparent;
+  border-radius: 0.5rem;
+}
+
+.alert-info {
+  color: var(--blue-color);
+  background-color: var(--main-bg-color);
+}
+
+.alert-danger {
+  color: var(--fail-color);
+  background-color: var(--bg-error-color);
 }
