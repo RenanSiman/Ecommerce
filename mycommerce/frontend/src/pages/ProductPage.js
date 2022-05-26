@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import data from "../data";
 import Rating from "../components/Rating";
 
-export default function ProductDetail(props) {
+export default function ProductPage(props) {
   const prod = data.products.find((e) => e._id === props.match.params.id);
+  const [qtd, setQtd] = useState(1);
+  const addToCartHandler = () => {
+    props.history.push(`/cart/${prod._id}?qtd=${qtd}`);
+  };
+
   if (!prod) {
     return <div>Ops, não encontrei este personagem!</div>;
   }
@@ -52,9 +57,32 @@ export default function ProductDetail(props) {
                 </div>
               </div>
             </li>
-            <li>
-              <button className="primary block">Adicione ao carrinho</button>
-            </li>
+            {prod.countInStock > 0 && (
+              <>
+                <li>
+                  <div className="row">
+                    <div>Qtd</div>
+                    <div>
+                      <select
+                        value={qtd}
+                        onChange={(e) => setQtd(e.target.value)}
+                      >
+                        {[...Array(prod.countInStock).keys()].map((i) => (
+                          <option key={i} value={i + 1}>
+                            {i + 1}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <button onClick={addToCartHandler} className="primary block">
+                    Adicionar ao carrinho
+                  </button>
+                </li>
+              </>
+            )}
           </ul>
         </div>
       </div>

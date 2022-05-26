@@ -1,7 +1,8 @@
 import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
+import CartPage from "./pages/CartPage";
 import Home from "./pages/Home";
-import ProductDetail from "./pages/ProductDetail";
+import ProductPage from "./pages/ProductPage";
 
 function App() {
   return (
@@ -19,7 +20,8 @@ function App() {
           </div>
         </header>
         <main>
-            <Route path="/product/:id" component={ProductDetail}></Route>
+            <Route path="/cart/:id?" component={CartPage}></Route>
+            <Route path="/product/:id" component={ProductPage}></Route>
             <Route path="/" component={Home} exact></Route>
         </main>
         <footer className="row center">Todos os direitos reservados.</footer>

@@ -83,7 +83,9 @@ li.powers {
 
   list-style-type: circle;
 }
-
+input, 
+select, 
+textarea,
 button {
   padding: 0.8rem;
   border-radius: 0.5rem;
@@ -97,16 +99,24 @@ button {
   cursor: pointer;
 }
 
+button {
+  background-color: var(--main-bg-color);
+  cursor: pointer;
+}
+
+input:hover, 
+select:hover, 
+textarea:hover,
+button:hover {
+  border: 0.1rem var(--border-large) solid;
+}
+
 button.primary {
   background-color: var(--stars-color);
 }
 
 button.block {
   width: 100%;
-}
-
-button:hover {
-  border: 0.1rem var(--border-large) solid;
 }
 
 header a {
